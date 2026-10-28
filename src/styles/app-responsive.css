@@ -1,0 +1,742 @@
+/* Final responsive overrides shared by every workflow screen. */
+#root,
+.app-shell,
+.app-main,
+.main-content,
+.page-container,
+.request-page,
+.status-page,
+.approval-page,
+.travel-desk-page,
+.travel-booking-page,
+.welcome-page,
+.finance-page {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.toast-viewport {
+  position: fixed;
+  z-index: 20;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(18px, env(safe-area-inset-right));
+  display: grid;
+  width: min(420px, calc(100vw - 36px));
+  gap: 9px;
+  pointer-events: none;
+}
+
+.toast {
+  position: relative;
+  inset: auto;
+  display: grid;
+  width: 100%;
+  min-height: 58px;
+  grid-template-columns: 22px minmax(0, 1fr) 30px;
+  align-items: center;
+  gap: 11px;
+  margin: 0;
+  padding: 11px 12px;
+  border: 1px solid #d8e8df;
+  border-radius: 11px;
+  color: #315a47;
+  background: #fff;
+  box-shadow: 0 12px 30px #17375324;
+  font-size: 12px;
+  line-height: 1.45;
+  pointer-events: auto;
+}
+
+.toast-icon {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  color: #23815d;
+  background: #eaf7f0;
+}
+
+.toast-message {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.toast button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: #6e8293;
+  background: transparent;
+}
+
+.toast button:hover {
+  border-color: #dce6ed;
+  background: #f5f8fa;
+}
+
+.toast:focus-visible,
+.toast button:focus-visible,
+.confirmation-actions button:focus-visible {
+  outline: 3px solid var(--moonstone);
+  outline-offset: 2px;
+}
+
+.toast-success { border-color: #d8e8df; }
+
+.toast-error { border-color: #f0d5d3; color: #873f3a; }
+.toast-error .toast-icon { color: #b2463f; background: #fff0ee; }
+.toast-warning { border-color: var(--vanilla-border); color: var(--vanilla-text); }
+.toast-warning .toast-icon { color: var(--vanilla-text); background: var(--vanilla-light); }
+.toast-info { border-color: var(--border-main); color: var(--moonstone-dark); }
+.toast-info .toast-icon { color: var(--moonstone); background: var(--moonstone-subtle); }
+
+.modal-confirmation {
+  width: min(100%, 460px);
+}
+
+.confirmation-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.confirmation-content > span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--moonstone);
+  background: var(--moonstone-subtle);
+}
+
+.confirmation-content.is-danger > span {
+  color: #b04b45;
+  background: #fff0ee;
+}
+
+.confirmation-content p {
+  margin: 2px 0 0;
+  color: var(--text-body);
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.confirmation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.confirmation-actions button {
+  min-height: 38px;
+}
+
+.confirmation-danger-button {
+  padding: 0 14px;
+  border: 1px solid #b44d47;
+  border-radius: 7px;
+  color: white;
+  background: #b44d47;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.confirmation-actions button:disabled {
+  cursor: wait;
+  opacity: .6;
+}
+
+.confirmation-actions .button-primary {
+  min-height: 38px;
+}
+
+input:user-invalid:not([readonly]),
+select:user-invalid,
+textarea:user-invalid {
+  border-color: #d66a62 !important;
+  box-shadow: 0 0 0 3px #d66a621c;
+}
+
+input:user-invalid:not([readonly]):focus,
+select:user-invalid:focus,
+textarea:user-invalid:focus {
+  outline-color: #d66a62;
+}
+
+.main-content {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.profile-role {
+  padding: 5px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  color: var(--moonstone-dark);
+  background: var(--moonstone-subtle);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.login-role-select {
+  width: 100%;
+  min-height: 44px;
+  margin: 7px 0 16px;
+  padding: 0 12px;
+  border: 1px solid var(--border-main);
+  border-radius: 8px;
+  color: var(--text-main);
+  background: var(--bg-surface);
+  font-size: 13px;
+}
+
+img,
+iframe,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+.status-mobile-list,
+.approval-mobile-list {
+  display: none;
+}
+
+.modal-request-details {
+  width: min(100%, 960px);
+}
+
+.modal-request-details .modal-body {
+  min-width: 0;
+}
+
+.request-booking-document-info small {
+  color: #6f879c;
+  font-size: 8px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.status-mobile-card,
+.approval-mobile-card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #e2eaf2;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 5px 15px #23496c0a;
+}
+
+.status-mobile-card-header,
+.approval-mobile-card > header {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+.status-mobile-card-header > div,
+.approval-mobile-card > header > div {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.status-mobile-card-header strong,
+.approval-mobile-card > header strong {
+  color: var(--moonstone-dark);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.status-mobile-card-header > div > span,
+.approval-mobile-card > header > div > span {
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.status-mobile-route,
+.approval-mobile-route {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--text-main);
+  background: var(--moonstone-tint);
+  font-size: 11px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.status-mobile-route svg,
+.approval-mobile-route svg {
+  flex: 0 0 auto;
+  color: var(--moonstone);
+}
+
+.status-mobile-meta,
+.approval-mobile-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 12px;
+}
+
+.status-mobile-meta > span,
+.approval-mobile-meta > span {
+  min-width: 0;
+  color: var(--text-body);
+  font-size: 10px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.status-mobile-meta small,
+.approval-mobile-meta small,
+.finance-mobile-options small {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--text-muted);
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.status-mobile-documents {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.status-mobile-documents > section {
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.status-mobile-documents h3 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 7px;
+  color: var(--text-body);
+  font-size: 9px;
+}
+
+.status-mobile-documents h3 svg {
+  flex: 0 0 auto;
+  color: var(--moonstone);
+}
+
+.status-mobile-documents .request-document,
+.status-mobile-documents .request-document.is-compact {
+  min-width: 0;
+}
+
+.status-mobile-documents .request-document-name {
+  font-size: 8px;
+}
+
+.request-document-detail {
+  color: #7c91a4;
+  font-size: 8px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.status-mobile-documents .request-document > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.status-mobile-documents .request-document button {
+  min-height: 30px;
+  justify-content: center;
+  padding: 0 5px;
+  font-size: 8px;
+}
+
+.status-mobile-actions,
+.approval-mobile-card > footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid #edf2f6;
+}
+
+.status-mobile-actions > button,
+.approval-mobile-card > footer > button {
+  min-height: 36px;
+  justify-content: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 9px;
+}
+
+.finance-mobile-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.finance-mobile-options > div {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+  padding: 9px;
+  border: 1px solid #e2ebf3;
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.finance-mobile-options strong,
+.finance-mobile-options > div > span {
+  color: #3e5870;
+  font-size: 9px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.finance-mobile-options > div > span {
+  color: var(--moonstone-dark);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .welcome-highlights,
+  .desk-summary-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .request-page,
+  .status-page,
+  .approval-page,
+  .travel-desk-page,
+  .travel-booking-page,
+  .welcome-page {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .status-table-scroll,
+  .approval-table-scroll,
+  .desk-table-scroll {
+    display: none;
+  }
+
+  .status-mobile-list,
+  .approval-mobile-list {
+    display: grid;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .approval-summary,
+  .finance-page .approval-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .request-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .request-reason {
+    grid-column: span 2;
+  }
+
+  .booking-trip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .request-booking-document-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .profile-role {
+    display: none;
+  }
+
+  .toast-viewport {
+    top: max(10px, env(safe-area-inset-top));
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+
+  .login-role-select {
+    min-height: 44px;
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+
+  .toast {
+    min-height: 54px;
+    font-size: 11px;
+  }
+
+  .main-content {
+    padding: 20px 14px;
+  }
+
+  .topbar {
+    gap: 9px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .status-page-heading,
+  .approval-page-heading,
+  .desk-page-heading,
+  .booking-page-heading {
+    min-width: 0;
+  }
+
+  .status-page-heading > div,
+  .approval-page-heading > div:nth-child(2),
+  .desk-page-heading > div:nth-child(2),
+  .booking-page-heading > div:nth-child(2) {
+    min-width: 0;
+  }
+
+  .status-page-heading p:last-child,
+  .approval-page-heading > div:nth-child(2) > p:last-child,
+  .desk-page-heading p:last-child,
+  .booking-page-heading p:last-child {
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .status-list-card,
+  .approval-list-card,
+  .desk-queue-card,
+  .request-section,
+  .booking-card {
+    border-radius: 10px;
+  }
+
+  .status-mobile-card,
+  .approval-mobile-card {
+    padding: 12px;
+  }
+
+  .status-mobile-documents,
+  .finance-mobile-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .request-booking-document-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .request-booking-document {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .request-booking-document-info {
+    overflow-wrap: anywhere;
+  }
+
+  .request-booking-document-actions {
+    grid-column: 2 / -1;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding-left: 0;
+  }
+
+  .request-booking-document-actions button {
+    min-height: 34px;
+    font-size: 9px;
+  }
+
+  .status-mobile-documents .request-document > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .status-mobile-documents .request-document button {
+    font-size: 8px;
+  }
+
+  .approval-summary,
+  .finance-page .approval-summary {
+    gap: 8px;
+  }
+
+  .approval-metric {
+    min-height: 64px;
+  }
+
+  .approval-toolbar {
+    min-width: 0;
+  }
+
+  .approval-tabs {
+    max-width: 100%;
+    scrollbar-width: thin;
+  }
+
+  .approval-search,
+  .desk-search {
+    min-width: 0;
+  }
+
+  .status-list-footer,
+  .approval-list-footer,
+  .desk-queue-footer {
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+
+  .request-form-actions,
+  .booking-form-actions {
+    flex-wrap: wrap;
+  }
+
+  .request-form-actions button,
+  .booking-form-actions button {
+    min-width: 0;
+  }
+
+  .booking-selected-grid,
+  .booking-completed-grid,
+  .booking-trip-grid,
+  .booking-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .modal-backdrop {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .modal-header h2 {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .modal-footer,
+  .approval-decision-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-content {
+    padding: 16px 10px;
+  }
+
+  .status-mobile-meta,
+  .approval-mobile-meta,
+  .approval-summary,
+  .finance-page .approval-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .status-page-heading,
+  .approval-page-heading,
+  .desk-page-heading,
+  .booking-page-heading {
+    flex-wrap: wrap;
+  }
+
+  .status-new-button,
+  .manager-identity,
+  .desk-agent-card,
+  .booking-agent {
+    margin-left: 0;
+  }
+
+  .status-mobile-card-header,
+  .approval-mobile-card > header {
+    flex-wrap: wrap;
+  }
+
+  .status-mobile-card-header .status-badge,
+  .approval-mobile-card > header .status-badge {
+    white-space: normal;
+  }
+
+  .status-mobile-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .status-mobile-actions > button {
+    width: 100%;
+  }
+
+  .status-mobile-documents .request-document > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .request-detail-list,
+  .approval-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .approval-decision-actions > button {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .request-page-heading h1,
+  .status-page-heading h1,
+  .approval-page-heading h1,
+  .desk-page-heading h1,
+  .booking-page-heading h1 {
+    font-size: clamp(20px, 7vw, 25px);
+    overflow-wrap: anywhere;
+  }
+}

@@ -1,0 +1,745 @@
+/* Shared sizing and alignment rules for the Travel Desk screens. */
+#root,
+.app-shell,
+.app-main,
+.main-content,
+.request-page,
+.status-page,
+.approval-page,
+.welcome-page {
+  min-width: 0;
+}
+
+.main-content {
+  overflow-x: clip;
+}
+
+.modal {
+  display: flex;
+  max-height: calc(100dvh - 40px);
+  min-width: 0;
+  flex-direction: column;
+}
+
+.modal-header {
+  flex: 0 0 auto;
+  gap: 12px;
+}
+
+.modal-header h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.modal-body {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+/* Keep form labels and controls aligned and readable at every width. */
+.request-fields {
+  align-items: start;
+}
+
+.request-field {
+  min-width: 0;
+  gap: 7px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.request-field input,
+.request-field select,
+.request-field textarea {
+  min-width: 0;
+  min-height: 42px;
+  font-size: 12px;
+}
+
+.request-field textarea {
+  min-height: 96px;
+}
+
+.request-field-helper {
+  font-size: 10px;
+}
+
+.request-section-heading h2 {
+  font-size: 14px;
+}
+
+.request-section-heading p,
+.request-page-description,
+.request-note {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.request-section-number,
+.request-eyebrow,
+.status-eyebrow,
+.approval-eyebrow {
+  font-size: 9px;
+}
+
+.request-cancel-button,
+.request-submit-button,
+.request-back-button,
+.status-new-button,
+.request-view-button,
+.quotation-button {
+  min-height: 38px;
+  font-size: 10px;
+}
+
+/* Request list filters wrap into predictable, equal-width controls. */
+.status-search,
+.status-select-filter {
+  min-width: 0;
+}
+
+.status-select-filter select {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-table-scroll,
+.approval-table-scroll,
+.table-scroll {
+  max-width: 100%;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+
+.status-table th,
+.approval-table th {
+  font-size: 9px;
+}
+
+.status-table td,
+.approval-table td {
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.status-list-heading,
+.approval-list-header {
+  min-width: 0;
+  gap: 12px;
+}
+
+.demo-data-tag,
+.approval-demo-tag {
+  flex: 0 0 auto;
+}
+
+.status-list-heading > div,
+.approval-list-header > div {
+  min-width: 0;
+}
+
+.status-list-heading p,
+.approval-list-header p {
+  line-height: 1.45;
+}
+
+.approval-table td > strong {
+  font-size: 10px;
+}
+
+.approval-table td > small {
+  font-size: 9px;
+}
+
+.approval-review-button,
+.quotation-button {
+  font-size: 9px;
+}
+
+.approval-remarks-field {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 7px 12px;
+  font-size: 10px;
+}
+
+.approval-remarks-field .approval-remarks-title {
+  color: #425c74;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.approval-remarks-field .approval-remarks-help {
+  color: #8798a9;
+  font-size: 9px;
+  font-weight: 450;
+  text-align: right;
+}
+
+.approval-remarks-field textarea,
+.approval-remarks-error {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 850px) {
+  .request-page-heading {
+    flex-wrap: wrap;
+  }
+
+  .request-page-heading > div {
+    min-width: 0;
+    flex: 1 1 240px;
+  }
+
+  .request-back-button {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .modal-backdrop {
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  }
+
+  .modal {
+    max-height: calc(100dvh - 24px);
+  }
+
+  .modal-header {
+    padding: 13px 15px;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .request-page-heading {
+    align-items: flex-start;
+  }
+
+  .request-page-heading > div {
+    flex-basis: 100%;
+  }
+
+  .request-page-heading h1,
+  .status-page-heading h1,
+  .approval-page-heading h1 {
+    font-size: clamp(22px, 6vw, 27px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .request-page-description {
+    max-width: none;
+  }
+
+  .request-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .request-section-heading {
+    margin-right: -14px;
+    margin-left: -14px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .request-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .request-reason {
+    grid-column: auto;
+  }
+
+  .request-field input,
+  .request-field select {
+    min-height: 44px;
+  }
+
+  .request-form-actions {
+    width: 100%;
+  }
+
+  .request-form-actions button {
+    flex: 1 1 0;
+  }
+
+  .status-filter-bar {
+    align-items: stretch;
+  }
+
+  .status-select-filter {
+    flex: 1 1 calc(50% - 9px);
+  }
+
+  .status-more-filters {
+    flex: 1 1 calc(50% - 9px);
+    justify-content: center;
+  }
+
+  .status-result-count {
+    min-height: 34px;
+  }
+
+  .status-extra-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 10px;
+  }
+
+  .status-extra-filters label {
+    min-width: 0;
+  }
+
+  .status-extra-filters input,
+  .status-extra-filters select {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    font-size: 10px;
+  }
+
+  .status-extra-filters > button {
+    min-height: 38px;
+    justify-self: start;
+    font-size: 9px;
+  }
+
+  .status-table th,
+  .approval-table th {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .status-table td,
+  .approval-table td {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .approval-page-heading > div:nth-child(2) {
+    min-width: 0;
+    flex: 1 1 200px;
+  }
+
+  .approval-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .approval-metric {
+    min-width: 0;
+    gap: 7px;
+    padding: 10px 8px;
+  }
+
+  .approval-metric small {
+    font-size: 9px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .approval-tabs button {
+    min-height: 44px;
+    font-size: 10px;
+  }
+
+  .approval-detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .approval-detail-grid dt,
+  .request-detail-list dt {
+    font-size: 10px;
+  }
+
+  .approval-detail-grid dd,
+  .request-detail-list dd {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .approval-decision-actions {
+    width: 100%;
+  }
+
+  .approval-decision-actions button {
+    flex: 1 1 0;
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  .approval-remarks-field .approval-remarks-help {
+    text-align: right;
+  }
+}
+
+@media (max-width: 420px) {
+  .request-page-heading > div {
+    align-items: flex-start;
+  }
+
+  .request-page-icon,
+  .status-title-icon,
+  .approval-heading-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .status-select-filter,
+  .status-more-filters {
+    flex-basis: 100%;
+  }
+
+  .status-extra-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .status-extra-filters > button {
+    justify-self: stretch;
+  }
+
+  .approval-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .approval-metric {
+    min-height: 60px;
+    align-items: center;
+    padding: 10px 12px;
+  }
+
+  .approval-list-header,
+  .status-list-heading {
+    align-items: flex-start;
+  }
+
+  .approval-demo-tag,
+  .demo-data-tag {
+    padding: 5px 7px;
+    font-size: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-table tbody tr,
+  .request-submit-button,
+  .request-back-button {
+    transition: none;
+  }
+}
+
+/* The navigation rail stays in view while the page content scrolls. */
+.app-shell {
+  --sidebar-width: 78px;
+}
+
+.app-shell.sidebar-expanded {
+  --sidebar-width: 248px;
+}
+
+.app-shell > .sidebar {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  align-self: flex-start;
+  width: var(--sidebar-width);
+  height: 100vh;
+  height: 100dvh;
+  flex: 0 0 var(--sidebar-width);
+  align-items: stretch;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #43516a transparent;
+  scrollbar-width: thin;
+  transition: width 180ms ease, flex-basis 180ms ease;
+}
+
+.app-main {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.sidebar-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sidebar .brand-mark {
+  min-width: 0;
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar .brand-mark > span:last-child {
+  display: none;
+}
+
+.sidebar-toggle {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #34435a;
+  border-radius: 8px;
+  color: #c4d2e1;
+  background: #1b293d;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.sidebar-toggle:hover {
+  border-color: #52708f;
+  color: white;
+  background: #263a55;
+}
+
+.sidebar.is-collapsed .sidebar-brand-row {
+  flex-direction: column;
+}
+
+.sidebar.is-collapsed .brand-mark {
+  width: 100%;
+}
+
+.app-shell.sidebar-expanded > .sidebar {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.app-shell.sidebar-expanded .sidebar-brand-row {
+  justify-content: space-between;
+}
+
+.app-shell.sidebar-expanded .sidebar .brand-mark {
+  justify-content: flex-start;
+  gap: 9px;
+}
+
+.app-shell.sidebar-expanded .sidebar .brand-mark > span:last-child {
+  display: inline;
+  color: #e5eef8;
+  font-size: 12px;
+  letter-spacing: .13em;
+}
+
+.app-shell.sidebar-expanded .workspace-label {
+  display: block;
+  padding: 31px 10px 12px;
+  color: #8fa2b8;
+  font-size: 9px;
+}
+
+.app-shell.sidebar-expanded .nav-list {
+  margin-top: 0;
+}
+
+.app-shell.sidebar-expanded .nav-item {
+  width: 100%;
+  height: 44px;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0 13px;
+}
+
+.app-shell.sidebar-expanded .nav-item > span {
+  position: static;
+  display: block;
+  width: auto;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  box-shadow: none;
+  font-size: 12px;
+}
+
+.app-shell.sidebar-expanded .sidebar-toggle {
+  border-color: transparent;
+  background: transparent;
+}
+
+.app-shell.sidebar-expanded .sidebar-toggle:hover {
+  border-color: #34435a;
+  background: #1b293d;
+}
+
+.lob-heading-icon {
+  color: #1875a9;
+  background: #e9f7ff;
+}
+
+.lob-manager-review {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 13px;
+  padding: 11px 12px;
+  border: 1px solid #dcefe6;
+  border-radius: 9px;
+  background: #f5fbf8;
+}
+
+.lob-manager-review > span {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  place-items: center;
+  border-radius: 8px;
+  color: #258264;
+  background: #e4f4ec;
+}
+
+.lob-manager-review > div {
+  min-width: 0;
+}
+
+.lob-manager-review strong,
+.lob-manager-review small {
+  display: block;
+}
+
+.lob-manager-review strong {
+  color: #315b4d;
+  font-size: 10px;
+}
+
+.lob-manager-review small {
+  margin-top: 4px;
+  color: #779185;
+  font-size: 9px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.lob-manager-review p {
+  margin: 7px 0 0;
+  color: #587669;
+  font-size: 10px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.lob-manager-approved {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #28815f;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.lob-approval-table td:nth-child(7) {
+  min-width: 175px;
+  white-space: normal;
+}
+
+.lob-approval-table td:nth-child(7) small {
+  max-width: 185px;
+  white-space: normal;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 680px) {
+  .app-shell > .sidebar {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: min(280px, calc(100vw - 40px));
+    height: 100dvh;
+    flex: 0 0 min(280px, calc(100vw - 40px));
+    padding: 18px 14px 14px;
+    transform: translateX(-105%);
+    transition: transform 180ms ease;
+  }
+
+  .mobile-menu-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-backdrop {
+    z-index: 2;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+
+  .sidebar-brand-row,
+  .sidebar.is-collapsed .sidebar-brand-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sidebar .brand-mark,
+  .sidebar.is-collapsed .brand-mark {
+    width: auto;
+    justify-content: flex-start;
+    gap: 9px;
+  }
+
+  .sidebar .brand-mark > span:last-child,
+  .sidebar.is-collapsed .brand-mark > span:last-child,
+  .sidebar.is-collapsed .workspace-label {
+    display: block;
+  }
+
+  .sidebar .brand-mark > span:last-child {
+    color: #e5eef8;
+    font-size: 12px;
+    letter-spacing: .13em;
+  }
+
+  .sidebar .workspace-label,
+  .app-shell.sidebar-expanded .workspace-label {
+    display: block;
+    padding: 31px 10px 12px;
+  }
+
+  .sidebar .nav-list {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .sidebar .nav-item,
+  .sidebar.is-collapsed .nav-item {
+    width: 100%;
+    height: 44px;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 0 13px;
+  }
+
+  .sidebar .nav-item > span,
+  .sidebar.is-collapsed .nav-item > span {
+    position: static;
+    display: block;
+    width: auto;
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    box-shadow: none;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell > .sidebar,
+  .sidebar-toggle {
+    transition: none;
+  }
+}

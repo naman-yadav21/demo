@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+@import './components.css';
+@import './welcome.css';
+@import './travel-request.css';
+@import './approvals.css';
+@import './responsive.css';
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  
+  /* Primary Brand: Moonstone */
+  --moonstone: #4C9DB0;
+  --moonstone-light: #6BB5C5;
+  --moonstone-hover: #3A8798;
+  --moonstone-dark: #2A6A78;
+  --moonstone-deep: #1A444E;
+  --moonstone-navy: #0E2228;
+  --moonstone-subtle: #E8F4F7;
+  --moonstone-tint: #F2F8FA;
+  --moonstone-glow: rgba(76, 157, 176, 0.32);
+
+  /* Netlink Corporate Logo Identity (#1768c4) */
+  --netlink-blue: #1768c4;
+  --netlink-blue-hover: #1259aa;
+  --netlink-blue-glow: rgba(23, 104, 196, 0.35);
+  --netlink-blue-tint: #edf5fc;
+
+  /* Secondary Accent: Vanilla */
+  --vanilla: #FFEBAF;
+  --vanilla-light: #FFF8E4;
+  --vanilla-cream: #FFFDF6;
+  --vanilla-border: #F5DC96;
+  --vanilla-hover: #F2D582;
+  --vanilla-text: #7B5808;
+
+  /* Surfaces & Neutrals */
+  --bg-app: #F5F9FA;
+  --bg-surface: #FFFFFF;
+  --border-main: #DFE8EB;
+  --border-subtle: #ECF2F4;
+  --text-main: #13272D;
+  --text-body: #3C5259;
+  --text-muted: #667E85;
+  --text-subtle: #91A6AD;
+
+  color: var(--text-main);
+  background: var(--bg-app);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background: var(--bg-app); color: var(--text-main); }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--moonstone); outline-offset: 2px; }
